@@ -6,7 +6,7 @@ Before D-Day:<br/>
 `D-72(88%)`
 
 The day:<br/>
-`D-Day`
+`D-Day(100%)`
 
 After D-Day:<br/>
 `D+4(100%)`
