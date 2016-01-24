@@ -3,11 +3,8 @@
 CURRENT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 source "$CURRENT_DIR/helpers.sh"
 
-# Global Variables
-d_day_icon=""
-
 get_d_day_setting() {
-  d_day_icon=""
+  d_day_icon=$( get_tmux_option "@d_day_icon" "" )
 }
 
 print_d_day_icon() {

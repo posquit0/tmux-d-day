@@ -75,7 +75,36 @@ $ tmux source-file ~/.tmux.conf
 
 If format strings are added to `status-left` or `status-right`, they should now be visible.
 
+### Configurations
+
+You can change these defaults by adding the following to `.tmux.conf` to customize the print.
+
+```tmux
+set -g @d_day_remain_prefix 'D'
+set -g @d_day_remain_postfix ''
+set -g @d_day_remain_plus_sign '+'
+set -g @d_day_remain_minus_sign '-'
+set -g @d_day_percentage_prefix ''
+set -g @d_day_percentage_postfix '%'
+set -g @d_day_start_date ''
+set -g @d_day_end_date 'today'
+set -g @d_day_the_day 'D-Day'
+set -g @d_day_icon ''
+```
+
 ### Changing icons
+
+By default, these icons are not displayed:
+
+You can change these defaults by adding the following to `.tmux.conf` (the
+following lines are not in the code block so that emojis can be seen):
+
+```tmux
+set -g @d_day_icon ":sunglasses:"
+```
+
+Don't forget to reload TMUX environment (`$ tmux source-file ~/.tmux.conf`)
+after you do this.
 
 ### Contributors
 
