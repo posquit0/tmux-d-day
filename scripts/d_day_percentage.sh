@@ -28,9 +28,9 @@ print_d_day_percentage() {
     local percentage=$(( 100 * passed / entire ))
     percentage=$(( percentage > 100 ? 100 : percentage ))
 
-    echo "$d_day_percentage_prefix$percentage$d_day_percentage_postfix"
+    printf "%s" "$d_day_percentage_prefix$percentage$d_day_percentage_postfix"
   else
-    echo ""
+    printf ""
   fi
 }
 
