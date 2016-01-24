@@ -2,6 +2,15 @@
 
 Enable displaying D-Day remains, percentage and icon in tmux statusbar.
 
+Before D-Day:<br/>
+`D-72(88%)`
+
+The day:<br/>
+`D-Day`
+
+After D-Day:<br/>
+`D+4(100%)`
+
 This is done by introducing 3 new format strings that can be added to
 `status-left` or `status-right` option:
 - `#{d_day_icon}` - will display a D-Day status icon
@@ -22,8 +31,10 @@ set -g @d_day_end_date '2016-04-06'
 Add `#{d_day_icon}`, `#{d_day_percentage}` or `#{d_day_remain}` format
 strings to existing `status-left` or `status-right` tmux option. Example:
 
-    # in .tmux.conf
-    set -g status-right '#{d_day_icon} #{d_day_remain}(#{d_day_percentage}) | %a %h-%d %H:%M '
+```tmux
+# in .tmux.conf
+set -g status-right '#{d_day_icon} #{d_day_remain}(#{d_day_percentage}) | %a %h-%d %H:%M '
+```
 
 Don't forget to reload TMUX environment (`$ tmux source-file ~/.tmux.conf`)
 after you do this.
@@ -33,7 +44,9 @@ after you do this.
 
 Add plugin to the list of TPM plugins in `.tmux.conf`:
 
-    set -g @plugin 'posquit0/tmux-d-day'
+```tmux
+set -g @plugin 'posquit0/tmux-d-day'
+```
 
 Hit `prefix + I` to fetch the plugin and source it.
 
@@ -43,16 +56,22 @@ If format strings are added to `status-left` or `status-right`, they should now 
 
 Clone the repo:
 
-    $ git clone https://github.com/posquit0/tmux-d-day ~/clone/path
+```bash
+$ git clone https://github.com/posquit0/tmux-d-day ~/clone/path
+```
 
 Add this line to the bottom of `.tmux.conf`:
 
-    run-shell ~/clone/path/d_day.tmux
+```tmux
+run-shell ~/clone/path/d_day.tmux
+```
 
 Reload TMUX environment:
 
-    # type this in terminal
-    $ tmux source-file ~/.tmux.conf
+```tmux
+# type this in terminal
+$ tmux source-file ~/.tmux.conf
+```
 
 If format strings are added to `status-left` or `status-right`, they should now be visible.
 
