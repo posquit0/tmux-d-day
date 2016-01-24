@@ -19,8 +19,6 @@ date_diff() {
 
 print_d_day_percentage() {
   local today="today"
-  d_day_start_date="2014-07-07"
-  d_day_end_date="2016-01-06"
 
   if [ "$d_day_start_date" != "" ]; then
     local entire=$(
