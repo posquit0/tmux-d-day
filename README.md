@@ -3,15 +3,12 @@
 Enable displaying D-Day remains, percentage and icon in tmux statusbar.
 
 Before D-Day:<br/>
-`✓ D-72(88%)`
 ![Before the day](/screenshots/d-day-before.png)
 
 The day:<br/>
-`✓ D-Day(100%)`
 ![The day](/screenshots/d-day.png)
 
 After D-Day:<br/>
-`✓ D+4(100%)`
 ![After the day](/screenshots/d-day-after.png)
 
 This is done by introducing 3 new format strings that can be added to
