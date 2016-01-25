@@ -7,18 +7,22 @@ get_d_day_setting() {
   d_day_percentage_prefix=$( get_tmux_option "@d_day_percentage_prefix" "" )
   d_day_percentage_postfix=$( get_tmux_option "@d_day_percentage_postfix" "%" )
   d_day_start_date=$( get_tmux_option "@d_day_start_date" "" )
-  d_day_end_date=$( get_tmux_option "@d_day_end_date" "today" )
+  d_day_end_date=$( get_tmux_option "@d_day_end_date" "today 0" )
 }
 
 date_diff() {
   local d1=$( date -d "$1" +%s )
   local d2=$( date -d "$2" +%s )
 
-  echo $(( ((d1 - d2) > 0 ? (d1 - d2) : (d2 - d1)) / (60 * 60 * 24) ))
+  if (( (d1 - d2) < 0 )); then
+    echo $(( ((d1 - d2) - (60 * 60 * 12)) / (60 * 60 * 24) ))
+  else
+    echo $(( (d1 - d2) / (60 * 60 * 24) ))
+  fi
 }
 
 print_d_day_percentage() {
-  local today="today"
+  local today="today 0"
 
   if [ "$d_day_start_date" != "" ]; then
     local entire=$(
