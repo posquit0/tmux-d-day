@@ -3,13 +3,13 @@
 Enable displaying D-Day remains, percentage and icon in tmux statusbar.
 
 Before D-Day:<br/>
-`D-72(88%)`
+`✓ D-72(88%)`
 
 The day:<br/>
-`D-Day(100%)`
+`✓ D-Day(100%)`
 
 After D-Day:<br/>
-`D+4(100%)`
+`✓ D+4(100%)`
 
 This is done by introducing 3 new format strings that can be added to
 `status-left` or `status-right` option:
@@ -89,7 +89,7 @@ set -g @d_day_percentage_postfix '%'
 set -g @d_day_start_date ''
 set -g @d_day_end_date 'today'
 set -g @d_day_the_day 'D-Day'
-set -g @d_day_icon ''
+set -g @d_day_icon '✓'
 ```
 
 ### Changing icons
@@ -100,7 +100,7 @@ You can change these defaults by adding the following to `.tmux.conf` (the
 following lines are not in the code block so that emojis can be seen):
 
 ```tmux
-set -g @d_day_icon ":sunglasses:"
+set -g @d_day_icon "✓"
 ```
 
 Don't forget to reload TMUX environment (`$ tmux source-file ~/.tmux.conf`)
